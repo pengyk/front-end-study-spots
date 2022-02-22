@@ -2,7 +2,6 @@ import type {NextPage} from "next";
 
 
 const About:NextPage = (schools) => {
-    console.log(schools);
     return (
         <div>
             something

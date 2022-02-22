@@ -1,15 +1,9 @@
-import React, {useEffect, useState} from "react"
+import React from "react"
 import styles from "../styles/Hero.module.css"
 import Autocomplete from "@mui/material/Autocomplete";
 import TextField from "@mui/material/TextField";
 import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
-
-export const TextFieldWrapper = styled(TextField)`
-  floatingLabelFocusStyle: {
-        color: "#000"
-    }
-`;
 
 const StyledAutocomplete = styled(Autocomplete)({
     "& .MuiAutocomplete-inputRoot": {

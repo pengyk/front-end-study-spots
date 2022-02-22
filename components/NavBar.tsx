@@ -4,10 +4,13 @@ import Box from '@mui/material/Box';
 import Toolbar from '@mui/material/Toolbar';
 import Typography from '@mui/material/Typography';
 import Button from '@mui/material/Button';
-import { useGoogleLogin } from 'react-google-login'
+import LoginButton from "./LoginButton";
+import LogoutButton from "./LogoutButton";
+import {useAuth0} from "@auth0/auth0-react";
 
 
 export default function NavBar() {
+    const { user } = useAuth0();
     return (
         <Box sx={{ flexGrow: 1}}>
             <AppBar sx={{bgcolor: '#262626'}} position="static">
@@ -16,8 +19,9 @@ export default function NavBar() {
                         <Button color={"inherit"} href={"/"}>StudySpots</Button>
                         <Button color={"inherit"} href={"/about"}>About</Button>
                     </Typography>
-                    <Button color={"inherit"} href={"/login"}>Login</Button>
-                    <Button variant={"outlined"} color={"inherit"} href={"/logout"}>Logout</Button>
+                    <p style={{padding: "0px 20px"}}>{user !== undefined && user.name}</p>
+                    <LoginButton/>
+                    <LogoutButton/>
                 </Toolbar>
             </AppBar>
         </Box>
